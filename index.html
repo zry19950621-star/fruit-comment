@@ -1,0 +1,734 @@
+{\rtf1\ansi\ansicpg936\cocoartf2708
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="zh-CN">\
+<head>\
+    <meta charset="UTF-8" />\
+    <title>\uc0\u20320 \u30340 \u27700 \u26524 \u20154 \u26684 \u32477 \u37197 \u26159 \u35841 \u65311 </title>\
+\
+    <!-- \uc0\u31227 \u21160 \u31471 \u36866 \u37197  -->\
+    <meta name="viewport"\
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />\
+    <meta name="apple-mobile-web-app-capable" content="yes" />\
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />\
+    <meta name="format-detection" content="telephone=no,email=no" />\
+\
+    <!-- iOS / \uc0\u24494 \u20449 \u23567 \u20248 \u21270  -->\
+    <style>\
+        * \{ -webkit-tap-highlight-color: rgba(0,0,0,0); \}\
+        body \{\
+            -webkit-touch-callout: none;\
+            -webkit-user-select: none;\
+            user-select: none;\
+        \}\
+    </style>\
+\
+    <!-- Tailwind CDN -->\
+    <script src="https://cdn.tailwindcss.com"></script>\
+\
+    <style>\
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');\
+\
+        body \{\
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;\
+            background-color: #000;\
+            color: #fff;\
+            overflow-x: hidden;\
+        \}\
+        .serif \{ font-family: 'Noto Serif SC', "STSong", "Songti SC", serif; \}\
+\
+        /* \uc0\u21160 \u30011  */\
+        @keyframes fadeIn \{\
+            from \{ opacity: 0; transform: translateY(10px); \}\
+            to   \{ opacity: 1; transform: translateY(0); \}\
+        \}\
+        @keyframes pulse-slow \{\
+            0%, 100% \{ transform: scale(1); opacity: 1; \}\
+            50%      \{ transform: scale(1.04); opacity: 0.85; \}\
+        \}\
+        @keyframes spin-slow \{\
+            from \{ transform: rotate(0deg); \}\
+            to   \{ transform: rotate(360deg); \}\
+        \}\
+        @keyframes slice \{\
+            0%   \{ width: 0; opacity: 0; left: -50%; \}\
+            50%  \{ width: 200%; opacity: 1; \}\
+            100% \{ left: 150%; opacity: 0; width: 0; \}\
+        \}\
+        @keyframes flash \{\
+            0%   \{ opacity: 0; \}\
+            50%  \{ opacity: 1; \}\
+            100% \{ opacity: 0; \}\
+        \}\
+\
+        .animate-fade-in     \{ animation: fadeIn 0.8s ease-out forwards; \}\
+        .animate-pulse-slow  \{ animation: pulse-slow 3s infinite ease-in-out; \}\
+        .animate-spin-slow   \{ animation: spin-slow 8s linear infinite; \}\
+        .animate-slice       \{ animation: slice 0.6s cubic-bezier(0.22,0.61,0.36,1) forwards; \}\
+        .animate-flash       \{ animation: flash 0.5s ease-out forwards; \}\
+\
+        ::-webkit-scrollbar \{ width: 0px; background: transparent; \}\
+\
+        img \{\
+            user-select: none;\
+            -webkit-user-drag: none;\
+        \}\
+\
+        .safe-top    \{ padding-top: env(safe-area-inset-top); \}\
+        .safe-bottom \{ padding-bottom: env(safe-area-inset-bottom); \}\
+\
+        /* === \uc0\u24320 \u23631 \u32972 \u26223 \u21160 \u24577 \u25928 \u26524  === */\
+\
+        /* \uc0\u32972 \u26223 \u22270 \u65306 \u36731 \u24494 \u21628 \u21560 \u32553 \u25918  + \u19978 \u19979 \u28418 \u28014  */\
+        @keyframes bgHeroFloat \{\
+            0% \{\
+                transform: scale(1) translateY(0);\
+            \}\
+            50% \{\
+                transform: scale(1.06) translateY(-8px);\
+            \}\
+            100% \{\
+                transform: scale(1) translateY(0);\
+            \}\
+        \}\
+\
+        .bg-hero-animate \{\
+            animation: bgHeroFloat 14s ease-in-out infinite;\
+            transform-origin: center center;\
+            will-change: transform;\
+        \}\
+\
+        /* \uc0\u26143 \u20809 \u38378 \u28865 \u23618  */\
+        .star-twinkle-layer \{\
+            position: absolute;\
+            inset: 0;\
+            background-image:\
+                radial-gradient(circle at 10% 20%, rgba(255,255,255,0.70) 0, rgba(255,255,255,0) 45%),\
+                radial-gradient(circle at 80% 30%, rgba(255,230,180,0.8) 0, rgba(255,230,180,0) 50%),\
+                radial-gradient(circle at 20% 80%, rgba(150,200,255,0.7) 0, rgba(150,200,255,0) 55%);\
+            mix-blend-mode: screen;\
+            opacity: 0.28;\
+            animation: starTwinkle 6s ease-in-out infinite alternate;\
+            pointer-events: none;\
+        \}\
+\
+        /* \uc0\u26143 \u20809 \u26126 \u26263 \u21464 \u21270  */\
+        @keyframes starTwinkle \{\
+            0% \{\
+                opacity: 0.1;\
+                transform: translate3d(0, 0, 0) scale(1);\
+            \}\
+            50% \{\
+                opacity: 0.35;\
+                transform: translate3d(3px, -4px, 0) scale(1.03);\
+            \}\
+            100% \{\
+                opacity: 0.18;\
+                transform: translate3d(-2px, 3px, 0) scale(1.01);\
+            \}\
+        \}\
+\
+        /* iOS \'93\uc0\u20943 \u23569 \u21160 \u24577 \'94\u20860 \u23481  */\
+        @media (prefers-reduced-motion: reduce) \{\
+            .bg-hero-animate,\
+            .star-twinkle-layer \{\
+                animation: none !important;\
+                transform: none !important;\
+            \}\
+        \}\
+    </style>\
+</head>\
+<body class="flex justify-center min-h-screen">\
+\
+<!-- \uc0\u25163 \u26426 \u23610 \u23544 \u23481 \u22120  -->\
+<div id="app"\
+     class="w-full max-w-[450px] bg-black relative shadow-2xl min-h-screen flex flex-col">\
+\
+    <!-- \uc0\u32972 \u26223 \u65306 \u25913 \u20026 \u29992  opening-bg.jpg + \u21160 \u24577 \u25928 \u26524  -->\
+    <div class="absolute inset-0 z-0 pointer-events-none">\
+        <div class="w-full h-full relative overflow-hidden">\
+            <!-- \uc0\u32972 \u26223 \u22270 \u65306 \u32531 \u24930 \u32553 \u25918 +\u28418 \u28014  -->\
+            <img src="opening-bg.jpg"\
+                 alt=""\
+                 class="w-full h-full object-cover opacity-80 bg-hero-animate"\
+                 style="filter: saturate(1.1) contrast(1.05);">\
+            <!-- \uc0\u28176 \u21464 \u21472 \u21152 \u65292 \u20445 \u25345 \u25991 \u23383 \u21487 \u35835 \u24615  -->\
+            <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/55 to-black/90"></div>\
+            <!-- \uc0\u26143 \u20809 \u38378 \u28865 \u23618  -->\
+            <div class="absolute inset-0 pointer-events-none star-twinkle-layer"></div>\
+        </div>\
+    </div>\
+\
+    <!-- \uc0\u20869 \u23481  -->\
+    <div id="content"\
+         class="relative z-10 w-full flex-1 flex flex-col safe-top safe-bottom">\
+    </div>\
+\
+    <!-- \uc0\u24494 \u20449 \u39030 \u37096 \u25552 \u31034  -->\
+    <div id="wx-tip"\
+         class="hidden fixed top-0 left-0 right-0 z-30 bg-black/80 text-white text-[11px] px-4 py-2 text-center">\
+        \uc0\u22312 \u24494 \u20449 \u20013 \u27983 \u35272 \u26102 \u65292 \u25512 \u33616 \u28857 \u20987 \u21491 \u19978 \u35282  \'93\'b7\'b7\'b7\'94 \u20351 \u29992 \u27983 \u35272 \u22120 \u25171 \u24320 \u65292 \u20307 \u39564 \u26356 \u27969 \u30021  \u55356 \u57169 \
+    </div>\
+</div>\
+\
+<script>\
+    // ------------ 1. \uc0\u39064 \u30446  ------------\
+    const questions = [\
+        \{\
+            id: 1, question: "\uc0\u20320 \u30340 \u33021 \u37327 \u26469 \u33258 \u21738 \u37324 \u65311 ",\
+            options: [\
+                \{ text: "A. \uc0\u34987 \u20154 \u30475 \u35265 \u12289 \u34987 \u35748 \u21487 ", weights: ["peach", "cherry"] \},\
+                \{ text: "B. \uc0\u29420 \u22788 \u26102 \u30340 \u28789 \u24863 \u21644 \u24187 \u24819 ", weights: ["kiwi", "watermelon"] \},\
+                \{ text: "C. \uc0\u24110 \u21161 \u21035 \u20154 \u12289 \u24102 \u26469 \u28201 \u26262 ", weights: ["lemon", "pomegranate"] \}\
+            ]\
+        \},\
+        \{\
+            id: 2, question: "\uc0\u24403 \u24773 \u32490 \u20302 \u33853 \u26102 \u65292 \u20320 \u20250 \u65311 ",\
+            options: [\
+                \{ text: "A. \uc0\u29992 \u31505 \u25513 \u39280 \u19968 \u20999 \u65292 \u20551 \u35013 \u27809 \u20107 ", weights: ["orange", "pineapple"] \},\
+                \{ text: "B. \uc0\u36828 \u31163 \u20154 \u32676 \u65292 \u29420 \u33258 \u30103 \u24840 ", weights: ["lemon", "dragonfruit"] \},\
+                \{ text: "C. \uc0\u21435 \u20570 \u28857 \u26377 \u36259 \u30340 \u20107 \u35753 \u33258 \u24049 \u21160 \u36215 \u26469 ", weights: ["peach", "guava"] \}\
+            ]\
+        \},\
+        \{\
+            id: 3, question: "\uc0\u22312 \u20154 \u32676 \u20013 \u65292 \u20320 \u36890 \u24120 \u26159 \u65311 ",\
+            options: [\
+                \{ text: "A. \uc0\u27963 \u36291 \u30340 \u20013 \u24515 \u20154 \u29289 ", weights: ["peach", "orange"] \},\
+                \{ text: "B. \uc0\u20919 \u38745 \u35266 \u23519 \u32773 ", weights: ["kiwi", "sugarcane", "starfruit"] \},\
+                \{ text: "C. \uc0\u33258 \u28982 \u27969 \u38706 \u39749 \u21147 \u65292 \u19981 \u21051 \u24847 \u20294 \u34987 \u21916 \u27426 ", weights: ["pineapple", "watermelon"] \}\
+            ]\
+        \},\
+        \{\
+            id: 4, question: "\uc0\u20320 \u26356 \u30456 \u20449 \u21738 \u31181 \u24184 \u31119 \u65311 ",\
+            options: [\
+                \{ text: "A. \uc0\u28909 \u28872 \u19988 \u30701 \u26242 \u30340 \u30636 \u38388 ", weights: ["peach", "cherry"] \},\
+                \{ text: "B. \uc0\u38271 \u20037 \u31283 \u23450 \u30340 \u38506 \u20276 ", weights: ["pomegranate", "lemon"] \},\
+                \{ text: "C. \uc0\u29420 \u33258 \u20063 \u33021 \u21457 \u20809 \u30340 \u33258 \u30001 ", weights: ["kiwi", "guava", "dragonfruit"] \}\
+            ]\
+        \},\
+        \{\
+            id: 5, question: "\uc0\u22914 \u26524 \u29992 \u19968 \u21477 \u35805 \u24418 \u23481 \u20320 \u30340 \u20154 \u29983 \u24577 \u24230 \u65306 ",\
+            options: [\
+                \{ text: "A. \'93\uc0\u25105 \u24819 \u34987 \u30475 \u35265 \u12290 \'94", weights: ["peach", "cherry"] \},\
+                \{ text: "B. \'93\uc0\u25105 \u19981 \u23436 \u32654 \u65292 \u20294 \u25105 \u33258 \u30001 \u12290 \'94", weights: ["guava", "dragonfruit"] \},\
+                \{ text: "C. \'93\uc0\u25105 \u29992 \u29233 \u21435 \u20462 \u22797 \u19968 \u20999 \u12290 \'94", weights: ["lemon", "pomegranate"] \}\
+            ]\
+        \},\
+        \{\
+            id: 6, question: "\uc0\u20320 \u26368 \u28212 \u26395 \u21035 \u20154 \u24590 \u26679 \u30475 \u20320 \u65311 ",\
+            options: [\
+                \{ text: "A. \uc0\u37239 \u12289 \u26377 \u36259 \u12289 \u29420 \u29305 ", weights: ["kiwi", "starfruit", "pineapple"] \},\
+                \{ text: "B. \uc0\u28201 \u26580 \u12289 \u26377 \u28145 \u24230 ", weights: ["lemon", "pomegranate", "dragonfruit"] \},\
+                \{ text: "C. \uc0\u33258 \u20449 \u12289 \u38378 \u20142 \u12289 \u38590 \u20197 \u24536 \u35760 ", weights: ["peach", "cherry", "orange"] \}\
+            ]\
+        \}\
+    ];\
+\
+    // ------------ 2. \uc0\u32467 \u26524 \u37197 \u32622 \u65288 \u20351 \u29992 \u20320 \u19978 \u20256 \u30340 \u22270 \u29255 \u65289  ------------\
+    const results = \{\
+        peach: \{\
+            img: "peach.jpg",\
+            name: "\uc0\u26691 \u23376 \u20154 \u26684 ",\
+            icon: "\uc0\u55356 \u57169 ",\
+            color: "from-pink-300 via-orange-200 to-red-200",\
+            title: "\uc0\u34987 \u30475 \u35265 \u30340 \u33402 \u26415 \u23478 ",\
+            keywords: ["\uc0\u26580 \u36719 ", "\u22806 \u21521 ", "\u24494 \u23396 \u29420 "],\
+            quote: "\'93\uc0\u25105 \u20934 \u22791 \u22909 \u20102 \u34987 \u30475 \u35265 \u12290 \'94",\
+            desc: "\uc0\u29980 \u32654 \u21448 \u26377 \u28857 \u21361 \u38505 \u65292 \u31038 \u20132 \u39640 \u25163 \u12289 \u28789 \u39746 \u23396 \u29420 \u12290 \u20320 \u35835 \u25026 \u21035 \u20154 \u65292 \u20063 \u20598 \u23572 \u35835 \u19981 \u25026 \u33258 \u24049 \u65292 \u22312 \u34987 \u22260 \u35266 \u21644 \u34987 \u29702 \u35299 \u20043 \u38388 \u26469 \u22238 \u25671 \u25670 \u12290 ",\
+            matchName: "\uc0\u26592 \u27308 \u20154 \u26684 ",\
+            matchDesc: "\uc0\u20182 \u26159 \u37240 \u30340 \u35299 \u33647 \u65292 \u20320 \u26159 \u29980 \u30340 \u24341 \u32447 \u12290 \u20320 \u36127 \u36131 \u28857 \u29123 \u65292 TA\u36127 \u36131 \u35753 \u19968 \u20999 \u22238 \u21040 \u29616 \u23454 \u12290 "\
+        \},\
+        lemon: \{\
+            img: "lemon.jpg",\
+            name: "\uc0\u26592 \u27308 \u20154 \u26684 ",\
+            icon: "\uc0\u55356 \u57163 ",\
+            color: "from-yellow-200 via-amber-300 to-sky-300",\
+            title: "\uc0\u37240 \u28073 \u30340 \u27529 \u36947 \u32773 ",\
+            keywords: ["\uc0\u28165 \u37266 ", "\u30103 \u24840 ", "\u24494 \u20809 "],\
+            quote: "\'93\uc0\u40657 \u22812 \u36234 \u28145 \u65292 \u37240 \u26970 \u36234 \u20142 \u12290 \'94",\
+            desc: "\uc0\u20320 \u26159 \u20992 \u38155 \u19979 \u30340 \u28201 \u26580 \u27835 \u24840 \u32773 \u12290 \u30475 \u24471 \u24456 \u28165 \u26970 \u65292 \u20063 \u24863 \u21463 \u24471 \u24456 \u28145 \u12290 \u20320 \u25026 \u25152 \u26377 \u20154 \u30340 \u38590 \u65292 \u21364 \u24456 \u23569 \u25215 \u35748 \u33258 \u24049 \u30340 \u32047 \u12290 ",\
+            matchName: "\uc0\u26691 \u23376 \u20154 \u26684 ",\
+            matchDesc: "\uc0\u19968 \u20010 \u25954 \u29233 \u65292 \u19968 \u20010 \u25954 \u25937 \u12290 \u20320 \u24110 \u26691 \u23376 \u30475 \u28165 \u29616 \u23454 \u65292 \u26691 \u23376 \u35753 \u20320 \u30456 \u20449 \u28010 \u28459 \u12290 "\
+        \},\
+        cherry: \{\
+            img: "cherry.jpg",\
+            name: "\uc0\u36710 \u21400 \u23376 \u20154 \u26684 ",\
+            icon: "\uc0\u55356 \u57170 ",\
+            color: "from-fuchsia-300 via-rose-400 to-purple-400",\
+            title: "\uc0\u31934 \u33268 \u30340 \u24187 \u26790 \u23043 \u23043 ",\
+            keywords: ["\uc0\u23436 \u32654 \u20027 \u20041 ", "\u34987 \u20957 \u35270 ", "\u36523 \u20221 \u28966 \u34385 "],\
+            quote: "\'93\uc0\u25105 \u38378 \u32768 \u65292 \u20063 \u26131 \u30862 \u12290 \'94",\
+            desc: "\uc0\u20320 \u22825 \u29983 \u24102 \u30528 \u38236 \u22836 \u24863 \u65292 \u36208 \u21040 \u21738 \u37324 \u37117 \u26159 \u28966 \u28857 \u12290 \u20294 \u36234 \u34987 \u30475 \u35265 \u65292 \u23601 \u36234 \u24597 \u26292 \u38706 \u33030 \u24369 \u12290 \u20320 \u22312 \u38378 \u32768 \u19982 \u33258 \u25105 \u24576 \u30097 \u20013 \u21453 \u22797 \u20999 \u25442 \u12290 ",\
+            matchName: "\uc0\u26472 \u26691 \u20154 \u26684 ",\
+            matchDesc: "\uc0\u26865 \u35282 \u19982 \u20809 \u29615 \u30340 \u25317 \u25265 \u12290 \u20320 \u20204 \u19968 \u20010 \u36127 \u36131 \u21457 \u20809 \u65292 \u19968 \u20010 \u36127 \u36131 \u35828 \u30495 \u35805 \u12290 "\
+        \},\
+        pineapple: \{\
+            img: "pineapple.jpg",\
+            name: "\uc0\u33760 \u33821 \u20154 \u26684 ",\
+            icon: "\uc0\u55356 \u57165 ",\
+            color: "from-yellow-200 via-lime-300 to-emerald-300",\
+            title: "\uc0\u20992 \u38155 \u19978 \u30340 \u28201 \u26580 \u36149 \u26063 ",\
+            keywords: ["\uc0\u37326 \u24515 ", "\u33258 \u24459 ", "\u38544 \u24525 "],\
+            quote: "\'93\uc0\u25105 \u31505 \u30528 \u34987 \u20999 \u24320 \u65292 \u22240 \u20026 \u25105 \u26377 \u37329 \u33394 \u30340 \u24515 \u12290 \'94",\
+            desc: "\uc0\u20320 \u24378 \u22823 \u12289 \u28165 \u37266 \u12289 \u30446 \u26631 \u26126 \u30830 \u12290 \u21035 \u20154 \u30475 \u21040 \u30340 \u26159 \u20320 \u30340 \u21050 \u65292 \u21364 \u24573 \u30053 \u20320 \u20869 \u37324 \u30340 \u39321 \u21644 \u29980 \u12290 ",\
+            matchName: "\uc0\u35199 \u29916 \u20154 \u26684 ",\
+            matchDesc: "\uc0\u20992 \u19982 \u26524 \u32905 \u65292 \u20114 \u20026 \u26580 \u36719 \u12290 TA\u35753 \u20320 \u21368 \u19979 \u30420 \u30002 \u65292 \u20320 \u35753 TA\u30475 \u35265 \u36793 \u30028 \u12290 "\
+        \},\
+        kiwi: \{\
+            img: "kiwi.jpg",\
+            name: "\uc0\u22855 \u24322 \u26524 \u20154 \u26684 ",\
+            icon: "\uc0\u55358 \u56669 ",\
+            color: "from-green-200 via-emerald-300 to-cyan-300",\
+            title: "\uc0\u23396 \u23707 \u22825 \u25165 ",\
+            keywords: ["\uc0\u29420 \u31435 ", "\u20869 \u25947 ", "\u28789 \u24863 "],\
+            quote: "\'93\uc0\u24618 \u65292 \u20063 \u26159 \u19968 \u31181 \u22825 \u36171 \u12290 \'94",\
+            desc: "\uc0\u20320 \u26159 \u26377 \u28857 \u27611 \u36481 \u12289 \u21448 \u24456 \u36890 \u36879 \u30340 \u33402 \u26415 \u24618 \u32974 \u12290 \u19990 \u30028 \u19981 \u19968 \u23450 \u25026 \u20320 \u65292 \u20294 \u28789 \u24863 \u27704 \u36828 \u31449 \u22312 \u20320 \u36825 \u36793 \u12290 ",\
+            matchName: "\uc0\u28779 \u40857 \u26524 \u20154 \u26684 ",\
+            matchDesc: "\uc0\u29702 \u24615 \u19982 \u33395 \u20029 \u30340 \u21644 \u24358 \u12290 \u20320 \u20204 \u20250 \u19968 \u36215 \u36896 \u19968 \u24231 \u21482 \u23646 \u20110 \u24444 \u27492 \u30340 \u24179 \u34892 \u23431 \u23449 \u12290 "\
+        \},\
+        guava: \{\
+            img: "guava.jpg",\
+            name: "\uc0\u33453 \u20048 \u20154 \u26684 ",\
+            icon: "\uc0\u55358 \u56685 ",\
+            color: "from-pink-200 via-rose-200 to-amber-200",\
+            title: "\uc0\u37326 \u34542 \u22899 \u29579 ",\
+            keywords: ["\uc0\u28909 \u28872 ", "\u33609 \u26681 ", "\u21453 \u21467 "],\
+            quote: "\'93\uc0\u25105 \u19981 \u23436 \u32654 \u65292 \u20294 \u25105 \u30495 \u23454 \u12290 \'94",\
+            desc: "\uc0\u20320 \u20174 \u19981 \u20266 \u35013 \u65292 \u24773 \u32490 \u26469 \u23601 \u26469 \u65292 \u36208 \u23601 \u36208 \u12290 \u20320 \u26159 \u20154 \u32676 \u37324 \u26368 \u21557 \u38393 \u30340 \u19968 \u39063 \u24515 \u65292 \u20063 \u26159 \u26368 \u30495 \u35802 \u30340 \u19968 \u39063 \u24515 \u12290 ",\
+            matchName: "\uc0\u30707 \u27060 \u20154 \u26684 ",\
+            matchDesc: "\uc0\u37326 \u19982 \u26580 \u30340 \u24179 \u34913 \u12290 \u20320 \u24110 TA\u25749 \u24320 \u35268 \u35757 \u65292 TA\u25945 \u20320 \u22914 \u20309 \u24515 \u30140 \u33258 \u24049 \u12290 "\
+        \},\
+        pomegranate: \{\
+            img: "pomegranate.jpg",\
+            name: "\uc0\u30707 \u27060 \u20154 \u26684 ",\
+            icon: "\uc0\u55356 \u57157 ",\
+            color: "from-red-200 via-rose-300 to-amber-200",\
+            title: "\uc0\u34987 \u36190 \u32654 \u30340 \u29306 \u29298 \u32773 ",\
+            keywords: ["\uc0\u27597 \u24615 ", "\u25215 \u21463 ", "\u37325 \u29983 "],\
+            quote: "\'93\uc0\u25105 \u29233 \u25152 \u26377 \u20154 \u65292 \u20063 \u24819 \u34987 \u33258 \u24049 \u29233 \u12290 \'94",\
+            desc: "\uc0\u20320 \u24635 \u26159 \u20808 \u29031 \u39038 \u21035 \u20154 \u65292 \u20877 \u24819 \u36215 \u33258 \u24049 \u12290 \u20320 \u25797 \u38271 \u20184 \u20986 \u65292 \u20063 \u22312 \u23398 \u30528 \u25298 \u32477 \u12290 \u20320 \u30340 \u28201 \u26580 \u19981 \u26159 \u22825 \u29983 \u30340 \u35752 \u22909 \u65292 \u32780 \u26159 \u34987 \u30952 \u20986 \u26469 \u30340 \u21147 \u37327 \u12290 ",\
+            matchName: "\uc0\u33453 \u20048 \u20154 \u26684 ",\
+            matchDesc: "\uc0\u19968 \u20010 \u25945 \u23545 \u26041 \u27963 \u65292 \u19968 \u20010 \u25945 \u23545 \u26041 \u29233 \u12290 "\
+        \},\
+        sugarcane: \{\
+            img: "sugarcane.jpg",\
+            name: "\uc0\u29976 \u34071 \u20154 \u26684 ",\
+            icon: "\uc0\u55358 \u56771 ",\
+            color: "from-emerald-300 via-green-300 to-slate-200",\
+            title: "\uc0\u29980 \u30340 \u22857 \u29486 \u32773 ",\
+            keywords: ["\uc0\u28201 \u39034 ", "\u38544 \u24525 ", "\u33487 \u37266 "],\
+            quote: "\'93\uc0\u36825 \u27425 \u65292 \u25105 \u20026 \u33258 \u24049 \u29980 \u12290 \'94",\
+            desc: "\uc0\u20320 \u20064 \u24815 \u25226 \u22909 \u19996 \u35199 \u30041 \u32473 \u21035 \u20154 \u65292 \u25226 \u21387 \u21147 \u30041 \u32473 \u33258 \u24049 \u12290 \u30452 \u21040 \u26377 \u19968 \u22825 \u65292 \u20320 \u32456 \u20110 \u24847 \u35782 \u21040 \u65306 \u20320 \u30340 \u29980 \u65292 \u20063 \u21487 \u20197 \u21482 \u20026 \u33258 \u24049 \u20445 \u30041 \u12290 ",\
+            matchName: "\uc0\u33760 \u33821 \u20154 \u26684 ",\
+            matchDesc: "\uc0\u29980 \u36935 \u19978 \u21050 \u65292 \u25165 \u25104 \u23601 \u23436 \u25972 \u30340 \u21619 \u36947 \u12290 "\
+        \},\
+        watermelon: \{\
+            img: "watermelon.jpg",\
+            name: "\uc0\u35199 \u29916 \u20154 \u26684 ",\
+            icon: "\uc0\u55356 \u57161 ",\
+            color: "from-teal-200 via-lime-300 to-yellow-200",\
+            title: "\uc0\u23431 \u23449 \u28010 \u28459 \u23478 ",\
+            keywords: ["\uc0\u27969 \u21160 ", "\u27426 \u20048 ", "\u23485 \u23481 "],\
+            quote: "\'93\uc0\u25105 \u19981 \u24597 \u34394 \u26080 \u65292 \u22240 \u20026 \u25105 \u33258 \u24102 \u24341 \u21147 \u12290 \'94",\
+            desc: "\uc0\u20320 \u33258 \u30001 \u12289 \u26494 \u24347 \u12289 \u23545 \u19990 \u30028 \u20445 \u25345 \u22909 \u22855 \u24515 \u12290 \u20320 \u19981 \u24378 \u27714 \u21035 \u20154 \u30041 \u19979 \u65292 \u20294 \u24895 \u24847 \u20026 \u21916 \u27426 \u30340 \u20154 \u19968 \u30452 \u20142 \u30528 \u12290 ",\
+            matchName: "\uc0\u33760 \u33821 \u20154 \u26684 ",\
+            matchDesc: "\uc0\u38451 \u20809 \u25758 \u19978 \u37329 \u33394 \u12290 \u20320 \u35753 TA\u36719 \u19968 \u28857 \u65292 TA\u35753 \u20320 \u31283 \u19968 \u28857 \u12290 "\
+        \},\
+        dragonfruit: \{\
+            img: "dragonfruit.jpg",\
+            name: "\uc0\u28779 \u40857 \u26524 \u20154 \u26684 ",\
+            icon: "\uc0\u55357 \u56329 ",\
+            color: "from-fuchsia-200 via-pink-300 to-slate-100",\
+            title: "\uc0\u33395 \u20029 \u30340 \u24184 \u23384 \u32773 ",\
+            keywords: ["\uc0\u33402 \u26415 ", "\u24773 \u32490 ", "\u30495 \u24515 "],\
+            quote: "\'93\uc0\u25105 \u20142 \u36807 \u65292 \u20063 \u30171 \u36807 \u12290 \'94",\
+            desc: "\uc0\u20320 \u20687 \u19968 \u22330 \u27704 \u36828 \u19981 \u20250 \u37325 \u28436 \u30340 \u29616 \u22330 \u28436 \u20986 \u12290 \u22806 \u34920 \u40092 \u33395 \u12289 \u35821 \u27668 \u36731 \u26494 \u65292 \u24515 \u37324 \u21364 \u34255 \u30528 \u24456 \u22810 \u27809 \u20154 \u30693 \u36947 \u30340 \u40657 \u27934 \u12290 ",\
+            matchName: "\uc0\u22855 \u24322 \u26524 \u20154 \u26684 ",\
+            matchDesc: "\uc0\u33395 \u20029 \u19982 \u23396 \u29420 \u30340 \u30103 \u24840 \u12290 \u20320 \u20204 \u20114 \u30456 \u25215 \u35748 \u23545 \u26041 \u30340 \u22855 \u24618 \u65292 \u20063 \u20114 \u30456 \u23432 \u25252 \u23545 \u26041 \u30340 \u25935 \u24863 \u12290 "\
+        \},\
+        orange: \{\
+            img: "orange.jpg",\
+            name: "\uc0\u27225 \u23376 \u20154 \u26684 ",\
+            icon: "\uc0\u55356 \u57162 ",\
+            color: "from-orange-200 via-rose-200 to-amber-200",\
+            title: "\uc0\u20803 \u27668 \u20048 \u22825 \u27966 ",\
+            keywords: ["\uc0\u38451 \u20809 ", "\u25513 \u39280 ", "\u27963 \u21147 "],\
+            quote: "\'93\uc0\u25105 \u30340 \u24555 \u20048 \u65292 \u26159 \u20320 \u30340 \u20809 \u12290 \'94",\
+            desc: "\uc0\u20320 \u26159 \u25152 \u26377 \u20154 \u24515 \u37324 \u30340 \u23567 \u22826 \u38451 \u12290 \u20320 \u20064 \u24815 \u29992 \u31505 \u21644 \u27573 \u23376 \u25377 \u20303 \u40657 \u26263 \u65292 \u20294 \u30495 \u27491 \u29702 \u35299 \u20320 \u30340 \u20154 \u24182 \u19981 \u22810 \u12290 ",\
+            matchName: "\uc0\u35199 \u29916 \u20154 \u26684 ",\
+            matchDesc: "\uc0\u24555 \u20048 \u21472 \u21152 \u24555 \u20048 \u12290 \u20320 \u20204 \u20250 \u19968 \u36215 \u25226 \u26085 \u24120 \u36807 \u25104 \u22799 \u22825 \u12290 "\
+        \},\
+        starfruit: \{\
+            img: "starfruit.jpg",\
+            name: "\uc0\u26472 \u26691 \u20154 \u26684 ",\
+            icon: "\uc0\u11088 ",\
+            color: "from-yellow-200 via-amber-200 to-slate-50",\
+            title: "\uc0\u23396 \u29420 \u30340 \u29702 \u24819 \u23478 ",\
+            keywords: ["\uc0\u26865 \u35282 ", "\u29420 \u29305 ", "\u27934 \u23519 "],\
+            quote: "\'93\uc0\u25105 \u26159 \u26143 \u26143 \u30340 \u20999 \u29255 \u12290 \'94",\
+            desc: "\uc0\u20320 \u26377 \u38155 \u21033 \u30340 \u36793 \u65292 \u20063 \u26377 \u26580 \u36719 \u30340 \u24515 \u12290 \u20320 \u30475 \u31359 \u24456 \u22810 \u34394 \u20551 \u65292 \u21448 \u19981 \u24895 \u36731 \u26131 \u35828 \u30772 \u65292 \u21482 \u26159 \u24708 \u24708 \u20445 \u25345 \u36317 \u31163 \u12290 ",\
+            matchName: "\uc0\u36710 \u21400 \u23376 \u20154 \u26684 ",\
+            matchDesc: "\uc0\u26865 \u35282 \u19982 \u20809 \u29615 \u30340 \u25317 \u25265 \u12290 \u20320 \u20204 \u19968 \u20010 \u36127 \u36131 \u20570 \u26790 \u65292 \u19968 \u20010 \u36127 \u36131 \u25286 \u31359 \u26790 \u12290 "\
+        \}\
+    \};\
+\
+    // ------------ 3. \uc0\u29366 \u24577 \u31649 \u29702  ------------\
+    let currentState = \{\
+        view: 'start',\
+        currentQ: 0,\
+        answers: [],\
+        finalResult: null\
+    \};\
+\
+    const app = document.getElementById('content');\
+\
+    // ------------ 4. \uc0\u28210 \u26579  ------------\
+    function render() \{\
+        app.innerHTML = '';\
+        if (currentState.view === 'start')   renderStart();\
+        else if (currentState.view === 'quiz')   renderQuiz();\
+        else if (currentState.view === 'loading') renderLoading();\
+        else if (currentState.view === 'result')  renderResult();\
+    \}\
+\
+    // \uc0\u39318 \u39029 \u65306 \u22823 \u32972 \u26223  + \u23567 \u34892 \u26143 \u24102 \u27700 \u26524 \u32553 \u30053 \u22270 \
+    function renderStart() \{\
+        const thumbFruits = [\
+            \{ key: 'peach', img: 'peach.jpg' \},\
+            \{ key: 'lemon', img: 'lemon.jpg' \},\
+            \{ key: 'orange', img: 'orange.jpg' \},\
+            \{ key: 'kiwi', img: 'kiwi.jpg' \},\
+            \{ key: 'pineapple', img: 'pineapple.jpg' \},\
+            \{ key: 'pomegranate', img: 'pomegranate.jpg' \},\
+            \{ key: 'starfruit', img: 'starfruit.jpg' \},\
+            \{ key: 'watermelon', img: 'watermelon.jpg' \}\
+        ];\
+\
+        const html = `\
+            <div class="flex flex-col justify-between min-h-screen px-6 pt-10 pb-10 animate-fade-in">\
+                <header class="mb-4">\
+                    <div class="text-[10px] tracking-[0.4em] opacity-70 mb-2">\
+                        ROACYZHENG \'b7 FRUIT UNIVERSE\
+                    </div>\
+                    <h1 class="text-3xl font-bold leading-snug drop-shadow-[0_0_14px_rgba(255,160,80,0.9)]">\
+                        \uc0\u20320 \u30340 <span class="text-orange-300">\u27700 \u26524 \u20154 \u26684 </span><br/>\
+                        \uc0\u32477 \u37197 \u26159 \u35841 \u65311 \
+                    </h1>\
+                </header>\
+\
+                <!-- \uc0\u20013 \u38388 \u23637 \u31034 \u65306 home \u32972 \u26223 \u19978 \u65292 \u19968 \u26465 \u27700 \u26524 \u26143 \u24102  -->\
+                <section class="mt-4 mb-8">\
+                    <div class="w-full rounded-3xl border border-white/15 bg-black/35 backdrop-blur-md px-4 py-4">\
+                        <div class="text-[11px] opacity-70 mb-3">\
+                            \uc0\u22312 \u33402 \u26415 \u23478  <span class="font-semibold">\u37073 \u20914 </span> \u30340 \u12300 \u27700 \u26524 \u23431 \u23449 \u12301 \u37324 \u65292 <br/>\
+                            \uc0\u27599 \u19968 \u39063 \u26524 \u23454 \u65292 \u37117 \u26159 \u19968 \u20010 \u28789 \u39746 \u30340 \u38544 \u21947 \u12290 \
+                        </div>\
+                        <div class="flex items-center gap-3 overflow-x-auto pb-1">\
+                            $\{\
+                                thumbFruits.map(f => `\
+                                    <div class="flex-shrink-0 w-12 h-12 rounded-full border border-white/40 overflow-hidden shadow-md">\
+                                        <img src="$\{f.img\}" loading="lazy" class="w-full h-full object-cover" alt="" />\
+                                    </div>\
+                                `).join('')\
+                            \}\
+                        </div>\
+                        <div class="mt-3 text-[10px] opacity-55">\
+                            \uc0\u21521 \u21491 \u28369 \u19968 \u28369 \u65292 \u24863 \u21463 \u25972 \u26465 \u27700 \u26524 \u26143 \u24102 \u12290 \
+                        </div>\
+                    </div>\
+                </section>\
+\
+                <section class="mb-6 text-[11px] opacity-65 leading-relaxed">\
+                    \uc0\u33457  1 \u20998 \u38047 \u31572  6 \u39064 \u65292 <br/>\
+                    \uc0\u30475 \u30475 \u20320 \u26159 \u21738 \u19968 \u39063 \u26524 \u20154 \u26684 \u65292 <br/>\
+                    \uc0\u20197 \u21450 \u21629 \u20013 \u27880 \u23450 \u30340 \u37027 \u39063 \u12300 \u32477 \u37197 \u26524 \u12301 \u26159 \u35841 \u12290 \
+                </section>\
+\
+                <footer class="flex flex-col items-center gap-4">\
+                    <button onclick="startQuiz()"\
+                            class="w-full max-w-[260px] py-3.5 bg-gradient-to-r from-orange-400 to-pink-500 rounded-full\
+                                   font-bold text-lg shadow-[0_0_20px_rgba(255,165,0,0.55)]\
+                                   hover:scale-105 transition-transform active:scale-95 flex items-center justify-center gap-2 cursor-pointer">\
+                        \uc0\u24320 \u22987 \u20999 \u24320 \u28789 \u39746  <span class="text-xl">\u8594 </span>\
+                    </button>\
+\
+                    <div class="text-[10px] opacity-40 tracking-[0.25em]">\
+                        SCREENSHOT \'b7 SHARE \'b7 TAG @ROACYZHENG\
+                    </div>\
+                </footer>\
+            </div>\
+        `;\
+        app.innerHTML = html;\
+    \}\
+\
+    // \uc0\u31572 \u39064 \u39029 \u65306 \u39030 \u37096 \u23567 \u34892 \u26143 \u24102 \u65292 \u24213 \u37096 \u38382 \u39064 \u21345 \
+    function renderQuiz() \{\
+        const q = questions[currentState.currentQ];\
+        const progress = ((currentState.currentQ + 1) / questions.length) * 100;\
+\
+        const html = `\
+            <div class="min-h-screen px-6 pt-6 pb-8 flex flex-col animate-fade-in">\
+                <!-- \uc0\u39030 \u37096 \u23548 \u33322  + \u36827 \u24230  -->\
+                <div class="mb-4">\
+                    <div class="flex justify-between items-center mb-2">\
+                        <div class="text-xs tracking-[0.25em] opacity-70">\
+                            FRUIT TEST\
+                        </div>\
+                        <div class="text-[11px] opacity-70">\
+                            $\{currentState.currentQ + 1\} / $\{questions.length\}\
+                        </div>\
+                    </div>\
+                    <div class="h-1 bg-white/10 rounded-full overflow-hidden">\
+                        <div class="h-full bg-orange-400 transition-all duration-500 ease-out"\
+                             style="width: $\{progress\}%"></div>\
+                    </div>\
+                </div>\
+\
+                <!-- \uc0\u23567 \u34892 \u26143 \u24102 \u65306 \u29992 \u20960 \u24352 \u20195 \u34920 \u24615 \u30011 \u20316 \u20570 \u32553 \u30053  -->\
+                <div class="flex gap-2 mb-6 overflow-x-auto pb-1">\
+                    $\{['peach','lemon','orange','kiwi','pineapple','pomegranate','starfruit','watermelon']\
+                        .map(key => `\
+                            <div class="flex-shrink-0 w-9 h-9 rounded-full overflow-hidden border border-white/30\
+                                        $\{key === 'peach' ? 'shadow-[0_0_12px_rgba(255,160,80,0.9)]' : ''\}">\
+                                <img src="$\{results[key].img\}" loading="lazy" class="w-full h-full object-cover" alt="" />\
+                            </div>\
+                        `).join('')\
+                    \}\
+                </div>\
+\
+                <!-- \uc0\u38382 \u39064 \u21306  -->\
+                <div class="flex-1">\
+                    <div class="mb-6">\
+                        <div class="text-xs uppercase opacity-60 tracking-[0.24em] mb-1">Question $\{currentState.currentQ + 1\}</div>\
+                        <h2 class="text-2xl font-bold leading-relaxed drop-shadow-md">\
+                            $\{q.question\}\
+                        </h2>\
+                    </div>\
+\
+                    <div class="space-y-4">\
+                        $\{\
+                            q.options.map((opt, idx) => `\
+                                <button onclick="handleAnswer($\{idx\})"\
+                                        class="w-full text-left p-5 rounded-2xl bg-black/45 border border-white/15\
+                                               backdrop-blur-md hover:bg-white/10 hover:border-orange-400/60\
+                                               transition-all active:scale-[0.97] cursor-pointer">\
+                                    <span class="text-base opacity-90">$\{opt.text\}</span>\
+                                </button>\
+                            `).join('')\
+                        \}\
+                    </div>\
+                </div>\
+\
+                <div class="mt-8 text-[11px] opacity-45 text-center leading-relaxed">\
+                    \uc0\u19981 \u29992 \u21453 \u22797 \u32416 \u32467 \u65292 <br/>\u31532 \u19968 \u21453 \u24212 \u36890 \u24120 \u23601 \u26159 \u20320 \u30495 \u23454 \u30340 \u27700 \u26524 \u20869 \u26680 \u12290 \
+                </div>\
+            </div>\
+        `;\
+        app.innerHTML = html;\
+    \}\
+\
+    // Loading\uc0\u65306 \u23431 \u23449 \u20999 \u29255 \u21160 \u30011 \
+    function renderLoading() \{\
+        const html = `\
+            <div class="min-h-screen bg-black flex flex-col items-center justify-center relative overflow-hidden">\
+                <div id="nebula"\
+                     class="w-48 h-48 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500\
+                            blur-2xl opacity-70 animate-spin-slow"></div>\
+\
+                <div id="laser"\
+                     class="hidden absolute inset-0 flex items-center justify-center">\
+                    <div class="w-[200%] h-[1px] bg-white shadow-[0_0_30px_white] rotate-[-45deg] animate-slice"></div>\
+                </div>\
+\
+                <div id="flash"\
+                     class="hidden absolute inset-0 bg-white z-30 animate-flash"></div>\
+\
+                <div id="loadingText"\
+                     class="absolute bottom-32 text-xs tracking-[0.5em] font-light animate-pulse text-white/80">\
+                    \uc0\u27491 \u22312 \u25910 \u38598 \u23431 \u23449 \u20449 \u21495 ...\
+                </div>\
+            </div>\
+        `;\
+        app.innerHTML = html;\
+\
+        const laser  = document.getElementById('laser');\
+        const flash  = document.getElementById('flash');\
+        const text   = document.getElementById('loadingText');\
+        const nebula = document.getElementById('nebula');\
+\
+        setTimeout(() => \{\
+            text.innerText = "\uc0\u27491 \u22312 \u20999 \u24320 \u28789 \u39746 ...";\
+            laser.classList.remove('hidden');\
+            nebula.style.animation = 'none';\
+            nebula.style.transform = 'scale(1.4)';\
+            nebula.style.filter = 'brightness(1.6)';\
+        \}, 1500);\
+\
+        setTimeout(() => \{\
+            text.innerText = "\uc0\u25214 \u21040 \u20102 \u12290 ";\
+            flash.classList.remove('hidden');\
+        \}, 2800);\
+\
+        setTimeout(() => \{\
+            currentState.view = 'result';\
+            render();\
+        \}, 3500);\
+    \}\
+\
+    // \uc0\u32467 \u26524 \u39029 \u65306 \u22823 \u22278 \u20027 \u35270 \u35273  + \u32477 \u37197 \u23567 \u22278 \
+    function renderResult() \{\
+        const res = currentState.finalResult;\
+        const matchRes =\
+            Object.values(results).find(r => r.name === res.matchName) || results.peach;\
+\
+        const html = `\
+            <div class="min-h-screen overflow-y-auto pb-32 animate-fade-in relative">\
+                <div class="px-6 pt-6 flex justify-between items-center opacity-80 text-[11px]">\
+                    <span class="tracking-[0.28em]">FRUIT \'b7 UNIVERSE</span>\
+                    <button onclick="location.reload()"\
+                            class="px-2 py-1 rounded-full bg-white/8 border border-white/16">\
+                        \uc0\u37325 \u26032 \u27979 \u35797 \
+                    </button>\
+                </div>\
+\
+                <div class="px-6 flex flex-col items-center mt-3">\
+                    <!-- \uc0\u20027 \u20154 \u26684 \u27833 \u30011 \u22823 \u22278  -->\
+                    <div class="w-64 h-64 rounded-full border-2 border-white/25 p-2 mb-6 relative">\
+                        <div class="w-full h-full rounded-full overflow-hidden shadow-[0_0_36px_rgba(255,255,250,0.32)]\
+                                    relative bg-black flex items-center justify-center">\
+                            <img src="$\{res.img\}"\
+                                 loading="lazy"\
+                                 class="w-full h-full object-cover"\
+                                 alt="$\{res.name\}">\
+                            <div class="absolute inset-0 bg-gradient-to-br from-black/5 via-transparent to-black/25"></div>\
+                        </div>\
+                        <!-- \uc0\u23567 \u26631 \u31614  -->\
+                        <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 text-[11px] px-3 py-1 rounded-full\
+                                    bg-black/70 border border-white/30 shadow-md">\
+                            $\{res.icon\}  $\{res.name\}\
+                        </div>\
+                    </div>\
+\
+                    <div class="mt-6 text-center mb-2 text-xs tracking-[0.35em] opacity-60 uppercase">\
+                        YOUR FRUIT PERSONA\
+                    </div>\
+                    <h1 class="text-3xl serif font-bold mb-2 text-center">\
+                        $\{res.title\}\
+                    </h1>\
+\
+                    <div class="flex flex-wrap justify-center gap-2 mb-8">\
+                        $\{res.keywords.map(k =>\
+                            `<span class="text-xs px-3 py-1 rounded-full border border-white/20 bg-white/6 text-orange-100">\
+                                $\{k\}\
+                            </span>`\
+                        ).join('')\}\
+                    </div>\
+\
+                    <div class="text-lg serif italic opacity-90 text-center mb-8 leading-relaxed max-w-xs">\
+                        $\{res.quote\}\
+                    </div>\
+\
+                    <div class="w-full bg-black/55 backdrop-blur-xl rounded-2xl p-6 border border-white/14 mb-10">\
+                        <h3 class="text-[11px] opacity-60 uppercase tracking-wider mb-2">\
+                            \uc0\u20154 \u26684 \u20999 \u29255  \'b7 Analysis\
+                        </h3>\
+                        <p class="text-sm leading-7 text-gray-100 text-justify">\
+                            $\{res.desc\}\
+                        </p>\
+                    </div>\
+\
+                    <!-- \uc0\u32477 \u37197 \u20154 \u26684 \u21306 \u65306 \u23567 \u22278 \u27833 \u30011  + \u25991 \u26696  -->\
+                    <div class="w-full bg-gradient-to-r from-indigo-900/70 to-purple-900/70\
+                                rounded-2xl p-6 border border-white/16 mb-10 relative overflow-hidden">\
+                        <div class="absolute -right-16 -top-16 w-40 h-40 rounded-full bg-white/10 blur-3xl"></div>\
+\
+                        <div class="relative z-10 flex gap-4 items-center">\
+                            <div class="w-16 h-16 rounded-full border border-white/30 overflow-hidden shadow-lg flex-shrink-0">\
+                                <img src="$\{matchRes.img\}" loading="lazy" class="w-full h-full object-cover" alt="$\{res.matchName\}">\
+                            </div>\
+                            <div class="flex-1">\
+                                <div class="text-[11px] uppercase opacity-60 tracking-[0.2em] mb-1">\
+                                    Soulmate Fruit\
+                                </div>\
+                                <div class="font-semibold mb-2">\
+                                    $\{res.matchName\}\
+                                </div>\
+                                <p class="text-xs opacity-90 leading-relaxed italic border-l-2 border-white/40 pl-3">\
+                                    $\{res.matchDesc\}\
+                                </p>\
+                            </div>\
+                        </div>\
+                    </div>\
+\
+                    <div class="w-full text-center text-[11px] opacity-55 pb-6 leading-relaxed">\
+                        \'b7 \uc0\u38271 \u25353 \u25130 \u22270 \u65292 \u20445 \u23384 \u20320 \u30340 \u27700 \u26524 \u20154 \u26684  \'b7<br/>\
+                        \uc0\u27426 \u36814 \u20998 \u20139 \u21040 \u31038 \u20132 \u24179 \u21488 \u65292 tag <span class="font-semibold">@ROACYZHENG</span><br/>\
+                        \uc0\u30475 \u30475 \u20320 \u36523 \u36793 \u30340 \u26379 \u21451 \u37117 \u26159 \u20160 \u20040 \u26524 \u12290 \
+                    </div>\
+                </div>\
+            </div>\
+        `;\
+        app.innerHTML = html;\
+    \}\
+\
+    // ------------ 5. \uc0\u20132 \u20114 \u36923 \u36753  ------------\
+    function startQuiz() \{\
+        currentState.view      = 'quiz';\
+        currentState.currentQ  = 0;\
+        currentState.answers   = [];\
+        currentState.finalResult = null;\
+        render();\
+    \}\
+\
+    function handleAnswer(idx) \{\
+        currentState.answers.push(idx);\
+\
+        if (currentState.currentQ < questions.length - 1) \{\
+            currentState.currentQ++;\
+            render();\
+        \} else \{\
+            calculateResult();\
+            currentState.view = 'loading';\
+            render();\
+        \}\
+    \}\
+\
+    function calculateResult() \{\
+        let scores = \{\};\
+        currentState.answers.forEach((choiceIndex, qIndex) => \{\
+            const weights = questions[qIndex].options[choiceIndex].weights;\
+            weights.forEach(fruit => \{\
+                scores[fruit] = (scores[fruit] || 0) + 1;\
+            \});\
+        \});\
+\
+        let maxScore = 0;\
+        for (let f in scores) if (scores[f] > maxScore) maxScore = scores[f];\
+\
+        let winners = [];\
+        for (let f in scores) if (scores[f] === maxScore) winners.push(f);\
+\
+        const winnerId = winners[Math.floor(Math.random() * winners.length)] || 'peach';\
+        currentState.finalResult = results[winnerId];\
+    \}\
+\
+    // ------------ 6. \uc0\u24494 \u20449 \u29615 \u22659 \u25552 \u31034  ------------\
+    (function detectWeChat() \{\
+        const ua = navigator.userAgent.toLowerCase();\
+        if (ua.indexOf('micromessenger') !== -1) \{\
+            const tip = document.getElementById('wx-tip');\
+            if (tip) tip.classList.remove('hidden');\
+        \}\
+    \})();\
+\
+    // \uc0\u21021 \u22987 \u21270 \
+    render();\
+</script>\
+\
+</body>\
+</html>}
